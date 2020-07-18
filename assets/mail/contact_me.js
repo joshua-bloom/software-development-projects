@@ -1,4 +1,12 @@
-$(function() {
+/* Wrap your code in this */
+/*
+    
+    $(document).ready(function(){ 
+        // your code 
+    });
+*/
+
+$(function(){
 
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true,
@@ -20,6 +28,7 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
+        // url: "http://localhost/assets/mail/contact_me.php",
         url: "contact_me.php",
         type: "POST",
         data: {
@@ -62,7 +71,7 @@ $(function() {
       return $(this).is(":visible");
     },
   });
-
+  
   $("a[data-toggle=\"tab\"]").click(function(e) {
     e.preventDefault();
     $(this).tab("show");
